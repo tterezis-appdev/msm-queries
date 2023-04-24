@@ -5,4 +5,8 @@ Rails.application.routes.draw do
 
   get("/movies", { :controller => "movies", :action => "index" })
 
+  get("/actors", { :controller => "actors", :action => "index" })
+
+  get("/characters", { :controller => "characters", :action => "index" })
+
 end

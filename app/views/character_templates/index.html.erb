@@ -1,0 +1,11 @@
+<h1>List of all charcters</h1>
+
+<% Character.all.each do |a_thing|%>
+  <li>
+    
+    <%=a_thing.actor_id%>,
+    <%=a_thing.name%>,
+    
+  </li>
+
+<%end%>
