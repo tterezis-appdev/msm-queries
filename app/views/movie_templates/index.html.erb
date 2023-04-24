@@ -2,10 +2,10 @@
 
 <% Movie.all.each do |a_thing|%>
   <li>
-    <%=a_thing.title%>,
+    <%=a_thing.id%>,
+    <%=a_thing.image%>,
     <%=a_thing.year%>,
-    <%=a_thing.duration%>,
-    <%=a_thing.description%>
+  
   </li>
 
 <%end%>
