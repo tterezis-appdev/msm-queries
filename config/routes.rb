@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   get("/characters", { :controller => "characters", :action => "index" })
 
+  get("/directors/eldest", { :controller => "directors", :action => "wisest" })
+
 end
