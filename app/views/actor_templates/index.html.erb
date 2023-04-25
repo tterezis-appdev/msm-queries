@@ -1,11 +1,15 @@
 <h1>List of all actors</h1>
-
+<table border="1">
 <% Actor.all.each do |a_thing|%>
-  <li>
-    <%=a_thing.name%>,
-    <%=a_thing.dob%>,
-    <%=a_thing.bio%>
-    
-  </li>
+ <tr>
+    <td> <%=a_thing.name%></td>
+    <td><%=a_thing.dob%></td>
+    <td><%=a_thing.bio%></td>
+     <td>
+      <a href="/actors/<%=a_thing.id%>">
+        Show details
+    </td>
+ </tr>
 
 <%end%>
+</table>

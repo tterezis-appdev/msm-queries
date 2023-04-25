@@ -1,12 +1,18 @@
 <h1>List of all movies</h1>
-
+<table border="1">
 <% Movie.all.each do |a_thing|%>
-  <li>
-    <%=a_thing.id%>,
-    <%=a_thing.image%>,
-    <%=a_thing.title%>,
-    <%=a_thing.year%>,
-  
-  </li>
+    <td><%=a_thing.id%></td>
+    <td>
+    <img src= "http://robohash.org/dd<%=a_thing.image%>">
+    </td>
+    <td><%=a_thing.title%></td>
+    <td><%=a_thing.year%></td>
+    <td><%=a_thing%></td>
 
+    <td>
+      <a href="/movies/<%=a_thing.id%>">
+        Show details
+    </td>
+
+ 
 <%end%>

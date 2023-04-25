@@ -10,8 +10,12 @@ def wisest
  render({:template => "director_templates/eldest.html.erb"})
 end
 
+def youngest
+  @youngest= Director.order({:dob => :desc}).at(0)
+   render({:template => "director_templates/youngest.html.erb"})
+  end
+
 def director_details
-  # params looksl like 
   the_id=params.fetch("an_id")
   @the_director=Director.where({:id=> the_id}).at(0)
 
