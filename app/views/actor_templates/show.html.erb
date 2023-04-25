@@ -58,3 +58,51 @@
     <%=time_ago_in_words(@the_actor.updated_at)%>
   </dd>
 </dl>
+
+
+<h2>Filmography</h2>
+
+<table border="1">
+  <%a_id=@the_actor.id%>
+  <% matching_characters=Character.where ({:actor_id => a_id}) %>
+
+  <%matching_characters.each do |a_character|%>
+    <%m_id=a_character.movie_id%>
+  <%matching_movies=Movie.where ({:id => m_id }) %>
+
+<%the_movie=matching_movies.at(0)%>
+  
+  
+  
+  <tr>
+    <th>
+      <%=the_movie.title%>
+    </th>
+
+    <th>
+      <%=the_movie.year%>
+    </th>
+
+    <th>
+      <%d_id=the_movie.director_id%>
+
+      <%matching_directors=Director.where({:id => d_id}) %>
+
+      <%the_director = matching_directors.at(0)%>
+
+      <%=the_director.name%>
+    </th>
+
+    <th>
+      <%=a_character.name%>
+    </th>
+
+
+      <td>
+        <a href="/movies/<%=the_movie.id%>">
+          Show details
+        </a>
+      </td>
+    </tr>
+  <% end %>
+</table>
